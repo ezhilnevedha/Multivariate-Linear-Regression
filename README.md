@@ -21,17 +21,30 @@ Run the program and take screen shot.
 End of the program.
 ## Program:
 ```
+#developed by Ezhil Nevedha.K
+#Register number:212223230055
+import panda as pd
+from sklearn import linear_model
 
+df = pd.read_csv("csvfile.csv")
 
+X = df[['Weight, Volume']]
+Y = df['CO2']
 
+regr = linear_model.LinearRegression()
+regr.fit(X,Y)
 
+print('coefficients:', regr.coef_)
+print("Intercept:",regr.coef_)
 
+predictedCO2 = regr.predict([[3300,1300]])
+print('predicted CO2 for the corresponding Weight and Volume',predictedCO2)
 
 ```
 ## Output:
-
+![alt text](<Screenshot 2023-12-29 144239.png>)
 ### Insert your output
-
+![alt text](<Screenshot 2023-12-29 144254.png>)
 
 ## Result
 Thus the multivariate linear regression is implemented and predicted the output using python program.
